@@ -1,0 +1,65 @@
+body{
+  margin: auto;
+}
+.container{
+  display: flex;
+  width: auto;
+}
+.prihod{
+  width: 260px;
+  height:790px;
+    display: block;
+    color: rgb(36, 34, 34);
+    padding: 50px 30px;
+    border: none;
+    cursor: pointer;
+    background-color: #e0e2e1;
+    position: sticky;
+    z-index: 999;
+    top: 120px;
+  }
+.tablitsa{
+width:100%;
+margin: 5px 15px 0 15px;
+}
+.tb-st {
+  width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+  
+  }
+  
+  .tb-st td, .tb-st th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .tb-st tr:nth-child(even){background-color: #f2f2f2;}
+  
+  .tb-st tr:hover {background-color: #ddd;}
+  
+  .tb-st th {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+ .btn-1 {
+    margin: 30px;
+    font-size: 18px;
+    height: 65px;
+    width: 250px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 1px 1px 0px 2px rgba (0,0,0,0.3);
+    background: rgb(141,217,252);
+    cursor: pointer;
+   }
+   h1{
+     font-size: 30px;
+     margin-bottom: 10px;
+   }
