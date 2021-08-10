@@ -32,8 +32,8 @@ export default function Prihod() {
    <Button  href="/DeletePage" className={classes.root}>Удалить</Button>
    <Button  href="/" className={classes.root}>Назад</Button>
    </div>
-        <div className="tablitsa">
-        <table  className="tb-st">
+        <div className="table">
+        <table  className="tb-style">
           <thead>
             <tr>
   

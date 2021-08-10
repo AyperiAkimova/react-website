@@ -36,24 +36,19 @@ class Furnitura extends React.Component {
             <div className="search">
                <h1>Фурнитура</h1>
             ****************************************
-            <button onClick = {this.changeVisibility} className="bt">{visible ?  "Закрыть поиск" : "Открыть поиск"}</button>
+            <button onClick = {this.changeVisibility} className="button">{visible ?  "Закрыть поиск" : "Открыть поиск"}</button>
             <Animation pose = {visible ? "visible" : "hidden"}>
-            <div className="fb">
+            <div className="form-btn">
               <div className="card">
                 <div className="card-header">
                   <h4>Поисковой отдел</h4>
                 </div>
                 <div className="card-body">
                   <form>
-                    <div className="fg">
+                    <div className="form">
                       <label htmlFor="name">Выберите Артикул</label>
-                      {/* <input type="text"
-                      name="name"
-                      id="id"
-                      className="fc"
-                      placeholder="Выберите Артикул"
-                       /> */}
-                        <select  className="fc" id="country" >
+                    
+                        <select id="" >
                         <option value="nit">CB-516</option>
                         <option value="nit">T-21</option>
                         <option value="zamok">T-19</option>
@@ -61,10 +56,10 @@ class Furnitura extends React.Component {
                         </select>
                     </div>
                     
-                    <div className="fg">
+                    <div className="form">
                       <label htmlFor="name">Выберите Фурнитура</label>
                     
-                      <select  className="fc" id="country" name="country" >
+                      <select id="" name="" >
                         <option value="nit">Нить Хб</option>
                         <option value="nit">Нить Вискоза</option>
                         <option value="zamok">Замок</option>
@@ -73,7 +68,7 @@ class Furnitura extends React.Component {
                     </div>
       
 
-                    <button className="sbt" type="submit">Поиск</button>
+                    <button className="s-button" type="submit">Поиск</button>
 
                   </form>
                 </div>

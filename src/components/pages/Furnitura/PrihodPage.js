@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) =>
 export default function PrihodPage()  {
  
     const classes = useStyles();  
-    const [value, setValue] = React.useState('prihod');
+    const [value, setValue] = useState('prihod');
 
     // const [name, setName] = useState('')
 
@@ -56,7 +56,7 @@ export default function PrihodPage()  {
   };
     return (
       <>
-      <div className="f-prihod">
+      <div className="form-prihod">
         <h1>Заполните данные</h1>
         
       <form className={classes.root} noValidate autoComplete="off">

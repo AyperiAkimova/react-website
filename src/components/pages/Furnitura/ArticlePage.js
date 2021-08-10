@@ -1,6 +1,6 @@
 import React from 'react';
 import './PrihodPage.css';
-import { createStyles, makeStyles, theme } from '@material-ui/core/styles';
+import { createStyles, makeStyles} from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
@@ -24,7 +24,7 @@ export default function ArticlePage() {
 
   return (
       <>
-       <div className="f-prihod"> 
+       <div className="form-prihod"> 
          <h1> Добавить</h1>
     <form className={classes.root} noValidate autoComplete="off">
     
