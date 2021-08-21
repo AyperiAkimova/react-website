@@ -15,7 +15,7 @@ function HeroSection() {
           className='btns'
           buttonStyle='btn--outline'
           buttonSize='btn--large'
-        
+          path='Video'
         >
           GET STARTED
         </Button>
