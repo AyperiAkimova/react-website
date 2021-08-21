@@ -20,5 +20,7 @@ module.exports = {
   'rules': {
     'no-trailing-spaces': 'off',
     'react/prop-types': 'off',
+    'linebreak-style': 'off',
+    'require-jsdoc': 'off',
   },
 };

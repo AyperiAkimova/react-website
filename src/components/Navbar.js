@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Button } from './Button';
-import { Link } from 'react-router-dom';
+import React, {useState, useEffect} from 'react';
+import {Button} from './Button';
+import {Link} from 'react-router-dom';
 import './Navbar.css';
 import Dropdown from './Dropdown';
-
 
 
 function Navbar() {
@@ -51,7 +50,7 @@ function Navbar() {
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
          
-          <img src='../images/logo.png' alt="" className="png"></img>
+            <img src='../images/logo.png' alt="" className="png"></img>
             
           </Link>
           <div className='menu-icon' onClick={handleClick}>
@@ -94,8 +93,8 @@ function Navbar() {
 
 
             <li className='nav-item'
-                 onMouseEnter={onMouseEnter}
-                 onMouseLeave={onMouseLeave}>
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}>
               <Link
 
                 className='nav-links'
