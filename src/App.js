@@ -1,12 +1,12 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from './components/pages/Home';
 import Services from './components/pages/Services';
 import Products from './components/pages/Products';
 import SignUp from './components/pages/SignUp';
-import Prihod from "./components/pages/Furnitura/Prihod" ;
+import Prihod from './components/pages/Furnitura/Prihod';
 
 
 import Furnitura from './components/pages/Furnitura/Furnitura';
@@ -15,8 +15,6 @@ import DeletePage from './components/pages/Furnitura/DeletePage';
 import Article from './components/pages/Furnitura/Article';
 import ArticlePage from './components/pages/Furnitura/ArticlePage';
 import Video from './components/pages/Video';
-
-
 
 
 function App() {

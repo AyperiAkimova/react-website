@@ -36,7 +36,11 @@ class Furnitura extends React.Component {
             <div className="search">
                <h1>Фурнитура</h1>
             ****************************************
-            <button onClick = {this.changeVisibility} className="button">{visible ?  "Закрыть поиск" : "Открыть поиск"}</button>
+            <button onClick = 
+            {this.changeVisibility} 
+            className="button">
+            {visible ?  "Закрыть поиск" : "Открыть поиск"}
+            </button>
             <Animation pose = {visible ? "visible" : "hidden"}>
             <div className="form-btn">
               <div className="card">

@@ -8,7 +8,7 @@
     border: none;
     cursor: pointer;
 }
-.btn--primary{
+.btn--primary {
     background-color: var(--primary);
     color: #242424;
     border: 1px solid var(--primary);
@@ -20,11 +20,11 @@
     border: 1px solid var(--primary);
     transition: all 0.3s ease-out;
 }
-.btn--medium{
+.btn--medium {
     padding: 8px 20px;
     font-size: 20px;
 }
-.btn--large{
+.btn--large {
     padding: 12px 26px;
     font-size: 20px;
 }
