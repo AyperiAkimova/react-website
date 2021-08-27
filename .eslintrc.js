@@ -5,6 +5,7 @@ module.exports = {
   },
   'extends': [
     'plugin:react/recommended',
+    'parser: babel-eslint',
     'google',
   ],
   'parserOptions': {
@@ -23,4 +24,5 @@ module.exports = {
     'linebreak-style': 'off',
     'require-jsdoc': 'off',
   },
+ 
 };
