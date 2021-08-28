@@ -6,6 +6,7 @@ import './PrihodPage.css';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import {FormControlLabel} from '@material-ui/core';
+import {useForm} from 'react-hook-form';
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -23,6 +24,9 @@ const useStyles = makeStyles((theme) =>
 export default function PrihodPage() {
   const classes = useStyles();  
   const [value, setValue] = useState('prihod');
+
+  const {register, handleSubmit} = useForm();
+  const onSubmit = (data) => console.log(data);
 
   // const [name, setName] = useState('')
 
@@ -57,12 +61,15 @@ export default function PrihodPage() {
       <div className="form-prihod">
         <h1>Заполните данные</h1>
         
-        <form className={classes.root} noValidate autoComplete="off">
+        <form className={classes.root} noValidate autoComplete="off" 
+          onSubmit={handleSubmit(onSubmit)}>
           <TextField
             id="outlined-secondary"
             label="Наименование(тех.харак)"
             variant="outlined"
             color="secondary"
+            name="name"
+            {...register('name', {required: true})}
             // value={name}
             // onChange={nameChangeHandler}
           />
@@ -71,20 +78,27 @@ export default function PrihodPage() {
             label="Код"
             variant="outlined"
             color="secondary"
+            name="kod"
+            {...register('kod', {required: true})}
           />
           <TextField
             id="outlined-secondary"
             label="Количество"
             variant="outlined"
             color="secondary"
+            name="koli"
+            {...register('koli', {required: true})}
           />
       
           <RadioGroup aria-label="prihod-rashod" 
-            name="pr" value={value} onChange={handleChange}>
+            name="pr" value={value} onChange={handleChange}
+            {...register('pr', {required: true})}>
             <FormControlLabel value="prihod" 
-              control={<Radio />} label="Приход" />
+              control={<Radio />} label="Приход" 
+            />
             <FormControlLabel value="rashod" 
-              control={<Radio />} label="Расход" />
+              control={<Radio />} label="Расход"
+            />
         
           </RadioGroup>
     
@@ -93,12 +107,16 @@ export default function PrihodPage() {
             label="Адрес"
             variant="outlined"
             color="secondary"
+            name="address"
+            {...register('address', {required: true})}
           />
           <TextField
             id="outlined-secondary"
             label="Дата"
             variant="outlined"
             color="secondary"
+            name="data"
+            {...register('data', {required: true})}
           />
      
           <TextField
@@ -106,23 +124,30 @@ export default function PrihodPage() {
             label="ед.изм"
             variant="outlined"
             color="secondary"
+            name="edizm"
+            {...register('edizm', {required: true})}
           />
           <TextField
             id="outlined-secondary"
             label="Цена"
             variant="outlined"
             color="secondary"
+            name="price"
+            {...register('price', {required: true})}
           />
           <TextField
             id="outlined-secondary"
             label="Артикул"
             variant="outlined"
             color="secondary"
+            name="article"
+            {...register('article', {required: true})}
           />
           <Button variant="contained" 
             color="secondary" 
             size="large" 
-            href="/Prihod" >
+           
+            type="submit">
   Сохранить
           </Button>
         </form>

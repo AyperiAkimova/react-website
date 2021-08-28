@@ -2,10 +2,8 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Home from './components/pages/Home';
-import Services from './components/pages/Services';
-import Products from './components/pages/Products';
-import SignUp from './components/pages/SignUp';
+import Home from './Home';
+import SignUp from './pages/SignUp';
 import Prihod from './components/pages/Furnitura/Prihod';
 
 
@@ -14,7 +12,7 @@ import PrihodPage from './components/pages/Furnitura/PrihodPage';
 import DeletePage from './components/pages/Furnitura/DeletePage';
 import Article from './components/pages/Furnitura/Article';
 import ArticlePage from './components/pages/Furnitura/ArticlePage';
-import Video from './components/pages/Video';
+import Video from './pages/Video';
 
 
 function App() {
@@ -24,8 +22,6 @@ function App() {
         <Navbar />
         <Switch>
           <Route path='/' exact component={Home} />
-          <Route path='/services' component={Services} />
-          <Route path='/products' component={Products} />
           <Route path='/SignUp' component={SignUp} />
           <Route path='/video' component={Video} />
           <Route path='/Prihod' component={Prihod} /> 
