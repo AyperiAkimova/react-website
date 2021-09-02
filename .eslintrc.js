@@ -7,7 +7,7 @@ module.exports = {
     'plugin:react/recommended',
     'google',
   ],
-  'parser': 'babel-eslint',
+  'parser': '@typescript-eslint/parser',
   'parserOptions': {
     'ecmaFeatures': {
       'jsx': true,
@@ -17,12 +17,15 @@ module.exports = {
   },
   'plugins': [
     'react',
+    '@typescript-eslint',
   ],
   'rules': {
     'no-trailing-spaces': 'off',
     'react/prop-types': 'off',
     'linebreak-style': 'off',
     'require-jsdoc': 'off',
+    'semi': 'off',
+    'no-unused-vars': 'warn',
+    'operator-linebreak': 'off',
   },
- 
 };
