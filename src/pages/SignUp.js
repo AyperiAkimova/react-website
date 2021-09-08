@@ -1,113 +1,87 @@
 import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-
-import Typography from '@material-ui/core/Typography';
+import {useForm} from 'react-hook-form';
+import './SignUp.css';
 import {makeStyles} from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import TextField from '@material-ui/core/TextField';
+import Select from '@material-ui/core/Select';
 
 const useStyles = makeStyles((theme) => ({
-  paper: {
-    marginTop: theme.spacing(8),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-  },
-  form: {
-    width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
+  root: {
+    '& > *': {
+      margin: theme.spacing(3),
+      marginLeft: '750px',
+      width: '25ch',
+      display: 'block',
+   
+    },
   },
 }));
-
 export default function SignUp() {
-  const classes = useStyles();
+  const {register, handleSubmit, formState: {errors}} = useForm();
+  const onSubmit = (data) => console.log(data);
+  console.log(errors);
 
+  const classes = useStyles();
+  
   return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Авторизация
-        </Typography>
-        <form className={classes.form} noValidate>
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="name"
-            label="ФИО"
-            name="text"
-            autoComplete="email"
-            autoFocus
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Пароль"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-            href="/Prihod"
-          >
-             Авторизация
-          </Button>
-          <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
-            </Grid>
-            <Grid item>
-              <Link href="#" variant="body2">
-                {'Don\'t have an account? Sign Up'}
-              </Link>
-            </Grid>
-          </Grid>
-        </form>
-      </div>
-      <Box mt={8}>
-        <Copyright />
-      </Box>
-    </Container>
+    
+    <form onSubmit={handleSubmit(onSubmit)} 
+      className={classes.root} noValidate autoComplete="off">
+      <TextField
+        id="outlined-secondary"
+        label="Атыныз"
+        variant="outlined"
+        color="secondary"
+        type="text" 
+        placeholder="Атыныз" {...register('First name', 
+            {required: true, maxLength: 80})}
+      />
+      <TextField
+        id="outlined-secondary"
+        label="Фамилияныз"
+        variant="outlined"
+        color="secondary"
+        type="text" 
+        placeholder="Фамилияныз" {...register('Last name', 
+            {required: true, maxLength: 80})}
+      />
+      <TextField
+        id="outlined-secondary"
+        label="Email"
+        variant="outlined"
+        color="secondary"
+        type="text" 
+        placeholder="Email" {...register('Email', 
+            {required: true, pattern: /^\S+@\S+$/i})}
+      />
+      <TextField
+        id="outlined-secondary"
+        label="password"
+        variant="outlined"
+        color="secondary"
+        type="password"
+        placeholder="Пароль" {...register('password', {min: 5})}
+      />
+       
+      <Select {...register('Title', {required: true})}
+        id="outlined-secondary"
+        label="Title"
+        variant="outlined"
+        color="secondary">
+        <option value="" />
+        <option value="eto">ЭТО</option>
+        <option value="furnitura">Фупнитура</option>
+        <option value="sklad">Склад</option>
+        <option value="hr">HR</option>
+      </Select>
+
+      {/* <input {...register('Developer', 
+          {required: true})} type="radio" value="Yes" />
+      <input {...register('Developer', 
+          {required: true})} type="radio" value="No" /> */}
+
+      <input type="submit" value="Жонотуу"/>
+    </form>
+    
   );
 }

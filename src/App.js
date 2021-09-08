@@ -9,6 +9,7 @@ import Prihod from './components/pages/Furnitura/Prihod';
 
 import Furnitura from './components/pages/Furnitura/Furnitura';
 import PrihodPage from './components/pages/Furnitura/PrihodPage';
+
 import DeletePage from './components/pages/Furnitura/DeletePage';
 import Article from './components/pages/Furnitura/Article';
 import ArticlePage from './components/pages/Furnitura/ArticlePage';
@@ -30,6 +31,7 @@ function App() {
           <Route path='/Furnitura' component={Furnitura} /> 
         
           <Route path='/PrihodPage' component={PrihodPage} /> 
+         
           <Route path='/DeletePage' component={DeletePage} /> 
           <Route path='/ArticlePage' component={ArticlePage} /> 
           

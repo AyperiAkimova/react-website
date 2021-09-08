@@ -29,7 +29,8 @@ export default function Prihod() {
             className={classes.root}>Приход/Расход</Button> 
           {/* <Button href="/RashodPage" 
           className={classes.root}>Расход</Button> */}
-          <Button className={classes.root}>Обновить</Button> 
+          <Button href="/UpdatePage" 
+            className={classes.root}>Обновить</Button> 
           <Button href="/DeletePage" className={classes.root}>Удалить</Button>
           <Button href="/" className={classes.root}>Назад</Button>
         </div>

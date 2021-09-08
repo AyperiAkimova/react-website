@@ -7,6 +7,7 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import {FormControlLabel} from '@material-ui/core';
 import {useForm} from 'react-hook-form';
+import {ErrorMessage} from '@hookform/error-message';
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -25,7 +26,8 @@ export default function PrihodPage() {
   const classes = useStyles();  
   const [value, setValue] = useState('prihod');
 
-  const {register, handleSubmit} = useForm();
+  const {register, formState: {errors}, handleSubmit} = useForm({
+    criteriaMode: 'all'});
   const onSubmit = (data) => console.log(data);
 
   // const [name, setName] = useState('')
@@ -69,18 +71,39 @@ export default function PrihodPage() {
             variant="outlined"
             color="secondary"
             name="name"
+           
             {...register('name', {required: true})}
-            // value={name}
-            // onChange={nameChangeHandler}
+            
           />
+        
+          
           <TextField
             id="outlined-secondary"
             label="Код"
             variant="outlined"
             color="secondary"
             name="kod"
-            {...register('kod', {required: true})}
+            {...register('kod', {
+              required: 'This input is required.',
+              pattern: {
+                value: /\d+/,
+                message: 'This input is number only.',
+              },
+            })}
           />
+          <ErrorMessage
+            errors={errors}
+            name="kod"
+            render={({messages}) => {
+              console.log('messages', messages);
+              return messages ?
+            Object.entries(messages).map(([type, message]) => (
+              <p key={type}>{message}</p>
+            )) :
+            null;
+            }}
+          />
+         
           <TextField
             id="outlined-secondary"
             label="Количество"
