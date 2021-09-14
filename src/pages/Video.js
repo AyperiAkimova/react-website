@@ -8,8 +8,6 @@ export default function Video() {
       width="50vw"
       height="50vh"
       playing={true}
-      
-    
     />
   );
 }
